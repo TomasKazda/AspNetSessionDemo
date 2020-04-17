@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using SessionDemo.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SessionDemo.Model;
 
 namespace SessionDemo.Pages
 {
@@ -23,7 +24,10 @@ namespace SessionDemo.Pages
 
         public void OnGet()
         {
+            _ss.Users.Add(new User("Jan", "Kos"));
+            _ss.Users.Add(new User("Pepa", "Nos"));
 
+            _ss.SaveUsers();
         }
 
         public void OnGetSetNumber(int number)

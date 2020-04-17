@@ -6,6 +6,7 @@ using SessionDemo.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using SessionDemo.Model;
 
 namespace SessionDemo.Pages
 {
@@ -15,9 +16,12 @@ namespace SessionDemo.Pages
         public int SecretNumber { get; set; }
         public bool isSetSecret { get; set; }
 
+        public List<User> Users { get; set; }
+
         public IndexModel(SessionStorage ss)
         {
             _ss = ss;
+            Users = _ss.Users;
         }
 
         public void OnGet()

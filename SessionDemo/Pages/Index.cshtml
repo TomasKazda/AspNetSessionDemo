@@ -18,4 +18,11 @@
             }
         </p>
 
+        <ul>
+            @foreach (var item in Model.Users)
+            {
+                <li>@item.FullName</li>
+            }
+        </ul>
+
     </div>
